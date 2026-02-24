@@ -38,7 +38,7 @@ jobs:
   
   build-and-test:
     # Add your build job configuration here
-    runs-on: # specify runner environment
+    runs-on: ubuntu-latest # specify runner environment
     
     steps:
     # Add steps for:
@@ -46,7 +46,23 @@ jobs:
     # 2. Set up Python 3.9 with pip caching
     # 3. Install dependencies from requirements.txt
     # 4. Run pytest with coverage reporting
+      - name: Checkout code
+        uses: actions/checkout@v3
 
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run tests with coverage
+        run: pytest --cov=src --cov-report=term-missing
 
 # ==================================================
 # SECTION 3: DOCKER BUILD AND DEPLOY
