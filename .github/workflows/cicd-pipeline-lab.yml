@@ -73,14 +73,14 @@ jobs:
   # and the Git commit SHA, then push to Docker Hub or GitHub Container Registry.
   # YOUR CODE HERE
   
-  docker-build:
-    # Configure job dependency on build-and-test
-    needs: # specify job dependency
-    runs-on: ubuntu-latest
+  # docker-build:
+  #   # Configure job dependency on build-and-test
+  #   needs: # specify job dependency
+  #   runs-on: ubuntu-latest
     
-    steps:
-    # Add steps for:
-    # 1. Checkout code  
-    # 2. Set up Docker Buildx
-    # 3. Login to container registry
-    # 4. Build and push Docker image with multiple tags
+  #   steps:
+  #   # Add steps for:
+  #   # 1. Checkout code  
+  #   # 2. Set up Docker Buildx
+  #   # 3. Login to container registry
+  #   # 4. Build and push Docker image with multiple tags
