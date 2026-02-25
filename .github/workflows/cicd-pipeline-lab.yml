@@ -18,13 +18,14 @@ on:
     paths:
       - "src/**"
       - "tests/**"
+      - ".github/workflows/cicd-pipeline-lab.yml"
   pull_request:
     branches:
       - main
     paths:
       - "src/**"
       - "tests/**"
-
+      - ".github/workflows/cicd-pipeline-lab.yml"
 
 # ==================================================
 # SECTION 2: BUILD AND TEST JOB
